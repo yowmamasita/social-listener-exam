@@ -4,7 +4,14 @@ import tweepy
 class Tweets(Controller):
 
     def list(self):
-        self.context['tweets'] = self.dump_tweets('bensarmiento')
+        try:
+            screen_name = self.request.params['q']
+            if screen_name:
+                self.context['tweets'] = self.dump_tweets(screen_name)
+            else:
+                raise KeyError
+        except:
+            return "Invalid input"
 
     def dump_tweets(self, screen_name):
         CONSUMER_KEY = 'clITZxFzGKPVAR1jK0MiA'

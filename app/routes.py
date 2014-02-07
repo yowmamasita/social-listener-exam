@@ -4,7 +4,9 @@ from ferris.core import routing, plugins
 routing.auto_route()
 
 # Default root route
-routing.default_root()
+# routing.default_root()
+
+routing.redirect('/', to='/index')
 
 
 # Plugins

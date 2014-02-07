@@ -2,6 +2,9 @@
 
 {% block layout_content %}
     <div class="container">
+        <div class="page-header">
+            <h1>Tweets</h1>
+        </div>
         <ol id="tweets">
         {% for tweet in tweets %}
             <li><a href="https://twitter.com/{{ tweet.user.screen_name }}/status/{{ tweet.id_str }}">{{ tweet.text }}</a></li>

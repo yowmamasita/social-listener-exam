@@ -1,0 +1,28 @@
+{% extends 'layouts/default.html' %}
+
+{% block layout_content %}
+    <div class="container">
+        <div class="page-header">
+            <h1>social-listener-exam</h1>
+        </div>
+        <form class="bs-example bs-example-form" role="form" action="/tweets" id="twitter" method="GET">
+            <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input type="text" class="form-control" placeholder="Twitter Username" name="q">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Fetch tweets</button>
+                </span>
+            </div>
+        </form>
+        <!-- <br>
+        <form class="bs-example bs-example-form" role="form" action="/activities" id="gplus" method="GET">
+            <div class="input-group">
+                <span class="input-group-addon">+</span>
+                <input type="text" class="form-control" placeholder="Google+ User ID" name="q">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Fetch activities</button>
+                </span>
+            </div>
+        </form> -->
+    </div>
+{% endblock %}
